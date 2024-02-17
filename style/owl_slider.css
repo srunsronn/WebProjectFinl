@@ -1,0 +1,268 @@
+.home {
+    height: 80vh;
+    color: black;
+  }
+  
+  .home .slide:nth-child(1),
+  .home .slide:nth-child(2),
+  .home .slide:nth-child(3) {
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700px;
+    z-index: 99;
+  }
+  
+  .home .slide:nth-child(1) {
+    background-image: url('../images/b1.jpg');
+  }
+  
+  .home .slide:nth-child(2) {
+    background-image: url('../images/h3.png');
+  }
+  
+  .home .slide:nth-child(3) {
+    background-image: url('../images/main1.jpg');
+    background-color: #c4e0e5;
+  }
+  
+  .home .slide {
+    position: absolute;
+    left: 0;
+    top: 18%;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+    animation: slide 2s ease;
+    padding: 0 15px;
+  }
+  
+  .home .slide.active {
+    display: flex;
+    overflow: visible;
+    margin-top: 50px;
+  }
+  
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .container_slide {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .home .container_slide {
+    flex-grow: 1;
+  }
+  
+  .home .caption {
+    width: 60%;
+  }
+  
+  .home .caption p {
+    font-size: 15px;
+    margin: 15px 0 30px;
+    font-size: 20px;
+  }
+  
+  .home .caption h1 {
+    font-size: 45px;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .home .slide.active .caption h1 {
+    opacity: 0;
+    animation: captiontext 0.5s forwards;
+    animation-delay: 1s;
+  }
+  
+  .home .slide.active .caption p {
+    opacity: 0;
+    animation: captiontext 0.5s forwards;
+    animation-delay: 1.2s;
+  }
+  
+  .home .slide.active .caption a {
+    opacity: 0;
+    animation: captiontext 0.5s forwards;
+    animation-delay: 1.4s;
+  }
+  
+  @keyframes captiontext {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+  
+  .home .caption a {
+    display: inline-block;
+    padding: 12px 80px;
+    border: 1px solid #305ee3;
+    background: #305ee3;
+    color: white;
+    transition: all 300ms ease-in-out;
+    border-radius: 40px;
+  }
+  
+  .home .caption a:hover {
+    background: #ba8b02;
+    color: white;
+    border: none;
+  }
+  
+  .home .control .prev,
+  .home .control .next {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    transition: 0.5s;
+  }
+  
+  .home .control .prev {
+    left: 0;
+  }
+  
+  .home .control .next {
+    right: 0;
+  }
+  
+  .home .control .prev:hover,
+  .home .control .next:hover {
+    background: white;
+    color: #191919;
+  }
+  
+  /*-------home---------*/
+  @media only screen and (max-width:800px) {
+    header {
+      height: auto;
+    }
+  
+    header .head_container .head .logo h3 {
+      font-size: 20px;
+      line-height: 40px;
+    }
+  
+    .search {
+      line-height: 10px;
+      margin-left: 20px;
+    }
+  
+    .search input {
+      width: 350px;
+      height: 40px;
+    }
+  
+    .search i {
+      padding: 10px 20px;
+    }
+  
+    header .head_container label {
+      display: none;
+    }
+  
+    header .head_container .head .left .head_icon {
+      margin-left: 10px;
+    }
+  
+    header .head_container .head .left .head_icon i {
+      font-size: 20px;
+    }
+  
+    nav ul {
+      position: absolute;
+      top: 130px;
+      right: 0;
+      width: 100%;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.9);
+      transition: max-height 0.5s;
+      z-index: 11;
+    }
+  
+    nav ul li {
+      display: block;
+      margin: 50px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  
+    nav ul li a {
+      color: white;
+    }
+  
+    .navbar span {
+      display: block;
+      cursor: pointer;
+    }
+  
+    /*---------home--------*/
+    .home {
+      height: 50vh;
+      color: white;
+    }
+  
+    .home .slide:nth-child(1),
+    .home .slide:nth-child(2),
+    .home .slide:nth-child(3) {
+      background-size: contain;
+      width: 100%;
+      height: 400px;
+    }
+  
+    .home .caption {
+      width: 100%;
+      padding: 50px;
+    }
+  
+    .home .slide.active {
+      margin-top: 10px;
+    }
+  
+    .home .caption p {
+      font-size: 15px;
+    }
+  
+    .home .caption h1 {
+      font-size: 25px;
+    }
+  
+    .home .control .prev,
+    .home .control .next {
+      top: 30%;
+    }
+  
+    /*---------home--------*/
+  }
+  /* Deal of day */
+  .product_deal_info{
+    border: 2px solid#03a3ba;
+    border-radius: 20px;
+  }
+  
+ 
